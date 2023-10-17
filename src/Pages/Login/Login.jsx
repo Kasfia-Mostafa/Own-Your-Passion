@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div>
+    <div className="m-20 lg:m-0">
       <section className="bg-gray-50 dark:bg-gray-900 font-PlayFair">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -59,7 +59,7 @@ const Login = () => {
                   </div>
 
                   <div>
-                    <Link to="signUp">
+                    <Link to="/register">
                       <p
                         className="text-sm text-primary-600 hover:underline dark:text-primary-500"
                       >
