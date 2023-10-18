@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "brand_name": "Apple",
+    "url": "https://i.ibb.co/rFYz26T/bangyu-wang-omo-Cm0bv-NW4-unsplash.jpg"
+  },
+  {
+    "id": 2,
+    "brand_name": "Samsung",
+    "url": "https://i.ibb.co/7y9LJhb/Samsung-Metal-Logo.jpg"
+  },
+  {
+    "id": 3,
+    "brand_name": "Sony",
+    "url": "https://i.ibb.co/KhrF8DD/james-feaver-cv3wn-Erx7w-unsplash.jpg"
+  },
+  {
+    "id": 4,
+    "brand_name": "HP",
+    "url": "https://i.ibb.co/JQpkD4j/minimalist-metal-hp-laptop-logo-z7d8jhbvt62yfacy.jpg"
+  },
+  {
+    "id": 5,
+    "brand_name": "Beats",
+    "url": "https://i.ibb.co/cv41MGS/safarulla-kasmi-u-TPkov-VRh-R8-unsplash.jpg"
+  },
+  {
+    "id": 6,
+    "brand_name": "Tesla",
+    "url": "https://i.ibb.co/5hLGn8z/a822ed179153839-Y3-Jvc-Cw4-MDgs-Nj-My-LDAs-MA.png"
+  }
+]

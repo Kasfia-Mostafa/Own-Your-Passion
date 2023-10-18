@@ -7,6 +7,8 @@ import Home from "./Pages/Home/Home";
 import AddProduct from "./Pages/AddAProduct/AddProduct";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
+import BrandLogo from "./Pages/Home/Logo/BrandLogo";
+import Logo from "./Pages/Home/Logo/Logo";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/",
+        element: <Logo></Logo>,
       },
       {
         path: "/addProduct",
