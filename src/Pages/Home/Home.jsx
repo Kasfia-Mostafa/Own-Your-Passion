@@ -1,13 +1,14 @@
 import Footer from "../Footer/Footer";
 import Banner from "./Banner";
 import BrandLogo from "./Logo/BrandLogo";
+import Logo from "./Logo/Logo";
 
 const Home = () => {
 
   return (
     <div>
       <Banner></Banner>
-      <BrandLogo></BrandLogo>
+      <Logo></Logo>
       <Footer></Footer>
     </div>
   );

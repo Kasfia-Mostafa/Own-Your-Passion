@@ -43,7 +43,6 @@ const handleProduct = event => {
               </div>
               <div className="w-full">
                 <label
-                  for="brand"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Brand
@@ -74,7 +73,6 @@ const handleProduct = event => {
               </div>
               <div>
                 <label
-                  for="category"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Category
@@ -91,7 +89,6 @@ const handleProduct = event => {
               </div>
               <div>
                 <label
-                  for="photo"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Product Image
@@ -107,7 +104,6 @@ const handleProduct = event => {
               </div>
               <div>
                 <label
-                  for="rating"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Rating
@@ -125,7 +121,6 @@ const handleProduct = event => {
               
               <div className="sm:col-span-2">
                 <label
-                  for="description"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Description
