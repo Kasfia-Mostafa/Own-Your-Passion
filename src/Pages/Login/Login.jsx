@@ -1,6 +1,46 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Hooks/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { signIn, googleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate()
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget);
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(email, password);
+
+    if(email,password){
+    signIn(email, password)
+      .then((result) => {
+        navigate('/')
+      })
+      .catch((error) => {
+        setError(error.massage);
+      });
+    }
+  
+
+  };
+
+  const handleGoogleRegister = () => {
+    googleSignIn().then((result) => {
+      console.log(result.user);
+    });
+  };
+
+  const notification = () => toast("Successfully Login");
+
   return (
     <div className="m-20 lg:m-0">
       <section className="bg-gray-50 dark:bg-gray-900 font-PlayFair">
@@ -10,12 +50,11 @@ const Login = () => {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Sign in to your account
               </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
+              <form className="space-y-4 md:space-y-6"
+              onSubmit={handleLogin}
+              >
                 <div>
-                  <label
-                    for="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Your email
                   </label>
                   <input
@@ -28,10 +67,7 @@ const Login = () => {
                   />
                 </div>
                 <div>
-                  <label
-                    for="password"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Password
                   </label>
                   <input
@@ -45,10 +81,30 @@ const Login = () => {
                 </div>
 
                 <button
+                onClick={notification}
                   type="submit"
-                  className="w-full text-black bg-primary-600 hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                  className="w-full text-black bg-slate-200  hover:bg-slate-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
                   Sign in
+                </button>
+                <ToastContainer
+                  position="top-center"
+                  autoClose={5000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="dark"
+                />
+                <button
+                onClick={handleGoogleRegister}
+                  type="submit"
+                  className="w-full text-black bg-primary-600 hover:underline focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                >
+                  Google
                 </button>
 
                 <div className="flex gap-2">
@@ -60,9 +116,7 @@ const Login = () => {
 
                   <div>
                     <Link to="/register">
-                      <p
-                        className="text-sm text-primary-600 hover:underline dark:text-primary-500"
-                      >
+                      <p className="text-sm text-primary-600 hover:underline dark:text-primary-500">
                         Sign up
                       </p>
                     </Link>

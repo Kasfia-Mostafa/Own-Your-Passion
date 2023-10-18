@@ -1,7 +1,23 @@
+import { useContext, useState } from "react";
 import { SiDungeonsanddragons } from "react-icons/si";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Hooks/AuthProvider";
 
 const Navbar = () => {
+  const [error, setError] = useState("");
+  const {user,logOut} = useContext(AuthContext)
+  const navigate = useNavigate()
+
+  const handleSignOut = () =>{
+    logOut()
+    .then((result) => {
+      navigate('/')
+    })
+    .catch((error) => {
+      setError(error.massage);
+    });
+  } 
+
   const navLink = (
     <>
       <li>
@@ -63,13 +79,21 @@ const Navbar = () => {
           </div>
 
           <div className="flex md:order-2">
-           <Link to='/login'>
+            {
+              user ? 
+              <button onClick={handleSignOut}
+              className="text-black bg-slate-200 hover:bg-slate-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >Sign Out</button>
+              :
+              <Link to='/login'>
            <button
               type="button"
               className="text-black bg-slate-200 hover:bg-slate-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Sign In
             </button></Link>
+            }
+          
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
@@ -94,6 +118,7 @@ const Navbar = () => {
                 />
               </svg>
             </button>
+            <img className="w-8 h-8 rounded-full" src="https://i.ibb.co/bWXBGX4/jakob-owens-ZOi80-IKQyus-unsplash.jpg" alt="user photo"></img>
           </div>
         </div>
       </nav>
