@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Product = ({ eachProduct }) => {
   const { name, brand, price, category, photo, rating } = eachProduct || {};
 
@@ -20,12 +22,15 @@ const Product = ({ eachProduct }) => {
             <span className="text-xl font-bold text-gray-900 dark:text-white">
               ${price}
             </span>
-            <a
-              href="#"
+           <div>
+            <Link to="/updateProduct">
+            <p
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Update
-            </a>
+            </p>
+            </Link>
+           </div>
           </div>
         </div>
       </div>

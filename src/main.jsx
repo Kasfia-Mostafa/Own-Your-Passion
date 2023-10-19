@@ -12,6 +12,7 @@ import Logo from "./Pages/Home/Logo/Logo";
 import AuthProvider from "./Hooks/AuthProvider";
 import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 import Products from "./Pages/Products/Products";
+import Update from "./Pages/Update/Update";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/addProduct",
         element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
+      },
+      {
+        path: "/updateProduct",
+        element:<PrivateRoute><Update></Update></PrivateRoute>,
       },
       {
         path: "/myCart",
