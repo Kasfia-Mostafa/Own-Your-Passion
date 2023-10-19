@@ -19,9 +19,16 @@ const Product = ({ eachProduct }) => {
             <p>Rating: {rating}</p>
           </div>
           <div className="flex justify-between">
-            <span className="text-xl font-bold text-gray-900 dark:text-white">
+           <div>
+           <span className="text-xl font-bold text-gray-900 dark:text-white">
               ${price}
             </span>
+
+            <Link to="/details">
+            <p className="mt-2 font-bold hover:underline">Details</p>
+            </Link>
+
+           </div>
            <div>
             <Link to="/updateProduct">
             <p
