@@ -10,6 +10,8 @@ import Register from "./Pages/Register/Register";
 import BrandLogo from "./Pages/Home/Logo/BrandLogo";
 import Logo from "./Pages/Home/Logo/Logo";
 import AuthProvider from "./Hooks/AuthProvider";
+import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
+import Products from "./Pages/Products/Products";
 
 const router = createBrowserRouter([
   {
@@ -25,8 +27,13 @@ const router = createBrowserRouter([
         element: <Logo></Logo>,
       },
       {
+        path: "/productShow",
+        element: <Products></Products>,
+        loader: () => fetch(`http://localhost:5000/products`)
+      },
+      {
         path: "/addProduct",
-        element: <AddProduct></AddProduct>,
+        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
       },
       {
         path: "/myCart",
