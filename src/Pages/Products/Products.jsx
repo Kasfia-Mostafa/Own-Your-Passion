@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Product from "./Product";
 
 const Products = () => {
+
   const allProducts = useLoaderData();
 
   return (

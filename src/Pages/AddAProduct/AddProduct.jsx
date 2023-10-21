@@ -27,7 +27,7 @@ const AddProduct = () => {
 fetch('http://localhost:5000/products',{
       method: 'POST',
       headers:{
-        'content-type': 'application/json'
+        'content-type' : 'application/json'
       },
       body: JSON.stringify(newProducts)
     })
@@ -36,7 +36,7 @@ fetch('http://localhost:5000/products',{
       console.log(data)
       Swal.fire({
         title: 'Success!',
-        text: 'User added successfully',
+        text: 'Product added successfully',
         icon: 'success',
         confirmButtonText: 'Cool'
       })

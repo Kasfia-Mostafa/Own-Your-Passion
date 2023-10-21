@@ -2,7 +2,7 @@ import { SiDungeonsanddragons } from "react-icons/si";
 const Footer = () => {
   return (
     <div>
-      <footer className="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800 font-PlayFair">
+      <footer className="p-4  md:p-8 lg:p-10 dark:bg-gray-800 font-PlayFair">
         <div className="mx-auto max-w-screen-xl text-center">
           <div>
             <div className="flex items-center justify-center">
@@ -21,32 +21,32 @@ const Footer = () => {
           </p>
           <ul className="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
             <li>
-              <p href="#" className="mr-4 hover:underline md:mr-6 ">
+              <p href="#" className="mr-4 hover:underline md:mr-6 text-gray-500 dark:text-gray-400">
                 About
               </p>
             </li>
             <li>
-              <p href="#" className="mr-4 md:mr-6">
+              <p href="#" className="mr-4 md:mr-6 text-gray-500 dark:text-gray-400">
                 Premium
               </p>
             </li>
             <li>
-              <p href="#" className="mr-4 md:mr-6 ">
+              <p href="#" className="mr-4 md:mr-6 text-gray-500 dark:text-gray-400">
                 Campaigns
               </p>
             </li>
             <li>
-              <p href="#" className="mr-4 md:mr-6">
+              <p href="#" className="mr-4 md:mr-6 text-gray-500 dark:text-gray-400">
                 Blog
               </p>
             </li>
             <li>
-              <p href="#" className="mr-4 md:mr-6">
+              <p href="#" className="mr-4 md:mr-6 text-gray-500 dark:text-gray-400">
                 FAQs
               </p>
             </li>
             <li>
-              <p href="#" className="mr-4 md:mr-6">
+              <p href="#" className="mr-4 md:mr-6 text-gray-500 dark:text-gray-400">
                 Contact
               </p>
             </li>

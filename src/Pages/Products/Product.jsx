@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Product = ({ eachProduct }) => {
-  const { name, brand, price, category, photo, rating } = eachProduct || {};
+  const {_id, name, brand, price, category, photo, rating } = eachProduct || {};
 
   return (
     <div>
@@ -19,25 +19,22 @@ const Product = ({ eachProduct }) => {
             <p>Rating: {rating}</p>
           </div>
           <div className="flex justify-between">
-           <div>
-           <span className="text-xl font-bold text-gray-900 dark:text-white">
-              ${price}
-            </span>
+            <div>
+              <span className="text-xl font-bold text-gray-900 dark:text-white">
+                ${price}
+              </span>
 
-            <Link to="/details">
-            <p className="mt-2 font-bold hover:underline">Details</p>
-            </Link>
-
-           </div>
-           <div>
-            <Link to="/updateProduct">
-            <p
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Update
-            </p>
-            </Link>
-           </div>
+              <Link to={`/details/${_id}`}>
+                <p className="mt-2 font-bold hover:underline">Details</p>
+              </Link>
+            </div>
+            <div>
+              <Link to={`/updateProduct/${_id}`}>
+                <p className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  Update
+                </p>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

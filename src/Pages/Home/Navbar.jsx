@@ -3,6 +3,7 @@ import { SiDungeonsanddragons } from "react-icons/si";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Hooks/AuthProvider";
 
+
 const Navbar = () => {
   const [error, setError] = useState("");
   const {user,logOut} = useContext(AuthContext)
@@ -42,7 +43,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/myCart"
+          to="/myCarts"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-slate-500 underline" : ""
           }
@@ -55,6 +56,8 @@ const Navbar = () => {
 
   return (
     <div>
+
+  
       <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
         <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex items-center">

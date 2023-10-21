@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import BrandLogo from "./BrandLogo";
+import { useParams } from "react-router-dom";
 
 const Logo = () => {
   const [productsLogo, setProductsLogo] = useState([]);
@@ -10,9 +11,11 @@ const Logo = () => {
       .then((data) => setProductsLogo(data));
   }, []);
 
+
+
   return (
     <div>
-      <div className="bg-black m-5 p-10">
+      <div className="m-5 p-10">
         <div className="max-w-5xl mx-auto p-10 font-PlayFair bg-white">
           <h2 className="text-5xl text-center font-bold m-4 text-black">
             Brands
