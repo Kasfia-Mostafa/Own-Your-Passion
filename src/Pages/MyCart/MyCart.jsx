@@ -1,11 +1,13 @@
-const MyCart = ({ cart }) => {
+import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
+
+const MyCart = ({cart}) => {
   const { name, brand, price, photo } = cart || {};
 
-  
 
   return (
     <div>
-      <div>
+      <div className="max-w-4xl mx-auto mt-40">
         <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           
             <img className="h-60 w-full" src={photo} alt="product image" />
