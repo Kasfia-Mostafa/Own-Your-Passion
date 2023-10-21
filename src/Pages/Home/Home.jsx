@@ -3,6 +3,7 @@ import Footer from "../Footer/Footer";
 import Banner from "./Banner";
 import Logo from "./Logo/Logo";
 import "../Home/style/style.css";
+import Review from "./Review";
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -28,6 +29,7 @@ const Home = () => {
           </div>
           <Banner></Banner>
           <Logo></Logo>
+          <Review></Review>
           <Footer></Footer>
         </div>
       </div>
