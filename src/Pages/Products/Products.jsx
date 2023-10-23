@@ -8,7 +8,7 @@ const allProducts = useLoaderData();
 
   return (
     <div className="mt-24 mb-20 font-PlayFair">
-      <div className="">
+      <div>
         <div
           id="controls-carousel"
           className="relative w-full"
@@ -92,7 +92,7 @@ const allProducts = useLoaderData();
 
       <div className="max-w-4xl mx-auto">
         <h2 className="text-center font-bold text-4xl m-14">All Products</h2>
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {allProducts.map((eachProduct) => (
             <Product key={eachProduct._id} eachProduct={eachProduct}></Product>
           ))}
