@@ -1,20 +1,34 @@
 import { useLoaderData } from "react-router-dom";
 import BrandLogo from "./BrandLogo";
+import { useEffect, useState } from "react";
 
 const Brands = () => {
+ 
+  const [models, setModels] = useState([])
+  const [filterBrands, setFilterBrand] = useState([])
 
-  const brandDetails = useLoaderData()
+useEffect(()=>{
+  fetch(`http://localhost:5000/products`)
+  .then(res => res.json())
+  .then(data => setModels(data))
+},[])
 
-console.log(brandDetails)
+const brandDetails = useLoaderData();
+
+useEffect(()=>{
+  const specificBrand = models.map(model => model.brandName)
+  const filterBrand = brandDetails.filter(productB => productB.brand === specificBrand)
+
+  setFilterBrand(filterBrand)
+
+},[brandDetails, models])
+console.log(filterBrands)
 
   return (
     <div>
-      {
-        brandDetails?.map(brandDetail => <BrandLogo
-        key={brandDetail._id}
-        brandDetail={brandDetail}
-        ></BrandLogo>)
-      }
+      {filterBrands?.map((brandDetail) => (
+        <BrandLogo key={brandDetail._id} brandDetail={brandDetail}></BrandLogo>
+      ))}
     </div>
   );
 };

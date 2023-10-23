@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import BrandLogo from "./BrandLogo";
-import { useParams } from "react-router-dom";
 
 const Logo = () => {
   const [productsLogo, setProductsLogo] = useState([]);

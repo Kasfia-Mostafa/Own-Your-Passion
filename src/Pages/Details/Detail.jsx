@@ -1,8 +1,7 @@
-// import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Detail = ({ eachProduct }) => {
-  const {_id, name, brand, price, photo, rating, description,category } =
+  const {name, brand, price, photo, rating, description,category } =
     eachProduct || {};
 
   const handleCart = () => {
@@ -29,7 +28,12 @@ const Detail = ({ eachProduct }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-       
+        Swal.fire({
+          title: 'Success!',
+          text: 'Product added successfully',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        })
       });
   };
 
@@ -62,14 +66,12 @@ const Detail = ({ eachProduct }) => {
               {description}
             </p>
             <div>
-              <Link to={`/myCarts/${_id}`}>
                 <button
                   onClick={handleCart}
                   className="btn bg-slate-400 w-40 p-1 rounded-md text-white "
                 >
                   Add to cart
                 </button>
-              </Link>
             </div>
           </div>
         </div>

@@ -1,9 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import Product from "./Product";
 
-const Products = () => {
+const Products = () => {  
 
-  const allProducts = useLoaderData();
+const allProducts = useLoaderData();
+
 
   return (
     <div className="mt-24 mb-20 font-PlayFair">

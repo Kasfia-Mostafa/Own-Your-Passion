@@ -24,7 +24,7 @@ const AddProduct = () => {
     console.log(newProducts);
 
 // send data to sever
-fetch('http://localhost:5000/cartBrand',{
+fetch('http://localhost:5000/products',{
       method: 'POST',
       headers:{
         'content-type' : 'application/json'

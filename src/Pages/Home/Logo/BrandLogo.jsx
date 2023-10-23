@@ -1,12 +1,9 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const BrandLogo = ({ productLogo }) => {
+const BrandLogo = ({ productLogo,brandDetail }) => {
   const { brand_name, url } = productLogo || {};
-
-
-  const brand = useLoaderData();
-
-console.log(brand)
+  const {brandName} = brandDetail || {}
+  console.log(brandName)
   return (
     <div>
       <div className="max-w-sm bg-white border border-gray-200 rounded-full shadow dark:bg-gray-800 dark:border-gray-700">
