@@ -8,7 +8,7 @@ const Brands = () => {
   const [filterBrands, setFilterBrand] = useState([])
 
 useEffect(()=>{
-  fetch(`http://localhost:5000/products`)
+  fetch(`https://own-your-passion-server.vercel.app/products`)
   .then(res => res.json())
   .then(data => setModels(data))
 },[])

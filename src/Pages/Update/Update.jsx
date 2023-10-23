@@ -28,7 +28,7 @@ const Update = () => {
     console.log(newProducts);
 
     // send data to sever
-    fetch(`http://localhost:5000/products/${_id}`, {
+    fetch(`https://own-your-passion-server.vercel.app/products/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

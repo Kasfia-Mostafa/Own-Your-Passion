@@ -15,6 +15,7 @@ import Update from "./Pages/Update/Update";
 import Details from "./Pages/Details/Details";
 import Brands from "./Pages/Home/Logo/Brands";
 import MyCarts from "./Pages/MyCart/MyCarts";
+import PrivetRoute from "./Pages/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -32,12 +33,12 @@ const router = createBrowserRouter([
       {
         path: "/productShow",
         element: <Products></Products>,
-        loader: () => fetch(`http://localhost:5000/products`),
+        loader: () => fetch(`https://own-your-passion-server.vercel.app/products`),
       },
       {
         path: "/productB/brandName",
         element: <Brands></Brands>,
-        loader: ({params}) => fetch(`http://localhost:5000/productB/${params.brandName}`),
+        loader: ({params}) => fetch(`https://own-your-passion-server.vercel.app/productB/${params.brandName}`),
       },
       {
         path: "/addProduct",
@@ -55,17 +56,17 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(`https://own-your-passion-server.vercel.app/products/${params.id}`),
       },
       {
         path: "/details/:id",
         element: <Details></Details>,
-        loader: () => fetch(`http://localhost:5000/products`),
+        loader: () => fetch(`https://own-your-passion-server.vercel.app/products`),
       },
       {
         path: "/myCarts",
-        element: <MyCarts></MyCarts>,
-        loader: () => fetch(`http://localhost:5000/cartBrands`),
+        element: <PrivetRoute><MyCarts></MyCarts></PrivetRoute>,
+        loader: () => fetch(`https://own-your-passion-server.vercel.app/cartBrands`),
       },
       {
         path: "/login",
