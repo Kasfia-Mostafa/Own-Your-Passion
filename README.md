@@ -1,8 +1,13 @@
-# React + Vite
+## 🛍️ Own Your Passion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Browse our e-commerce site for cutting-edge digital products - a curated selection designed to enhance your life with innovation, convenience, and top-notch quality.
 
-Currently, two official plugins are available:
+<a href='https://own-your-passion.web.app/'>Live Demo</a> 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### ⭐ Features
+
+- Toggle dark mode in home page
+- Products can be added and updated
+- Private routes for adding and updating products
+- Google Sign in
+- React.js, Node.js
